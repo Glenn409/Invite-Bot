@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const channelID = 401062206420156416; //check-invites channel ID
-
 //list of role and current id #'s for use retrieved w/ message.guild
 
 const private = '409243528108048385';
@@ -28,6 +27,8 @@ const sergeantmajor_inv = 25;
 const firstlieutenant_inv = 50;
 const colonel_inv = 150;
 const brigadiergeneral_inv = 500;
+
+let executeCount = 1;
 
 const checkRole = (desiredRole,currentRole) =>{  //checks to see if user has the highest role based on his invite count
   if(desiredRole === currentRole){
@@ -63,11 +64,10 @@ client.on('message', message => {
 
     invites.then(m =>{
       m.forEach(collection =>{
-
         //log I used for debugging data retrieved from fetchInvites()
         //to see all data retrieved use  -- console.log(m);
 
-  /*    console.log('\n\n\ninvite code: ',collection.code,
+    /*  console.log('\n\n\ninvite code: ',collection.code,
                     '\ninvite uses: ', collection.uses,
                     '\ninviter:', collection.inviter.id); */
 
@@ -76,7 +76,7 @@ client.on('message', message => {
         }
       })
       //edit inviteAmount here to test invite bot functions.
-      //inviteAmount = 125;
+      //inviteAmount = 512;
 
       let current_member = message.guild.member(message.author);
       let invite_reply = ('you currently have ' + inviteAmount + ' invites! ');
@@ -167,6 +167,8 @@ client.on('message', message => {
         }
       }
     })
+    console.log('Executed a invites command! Currently ' + executeCount + ' have been excited since turned on!' );
+    executeCount += 1;
   }
 
 /*Overall: Retrieves User's ID then execute's through all of the invite codes in a Server to find
