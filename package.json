@@ -1,0 +1,24 @@
+{
+  "name": "discord-invite-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Glenn409/Invite-Bot.git"
+  },
+  "author": "chris g",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Glenn409/Invite-Bot/issues"
+  },
+  "homepage": "https://github.com/Glenn409/Invite-Bot#readme"
+}
