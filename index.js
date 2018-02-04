@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const http = require('http');
 http.createServer(onRequest).listen(process.env.PORT || 6000)
 //list of role and current id #'s for use retrieved w/ message.guild
 
