@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const channelID = 401062206420156416; //check-invites channel ID
 //list of role and current id #'s for use retrieved w/ message.guild
 
 const private = '409243528108048385';
@@ -176,17 +175,3 @@ client.on('message', message => {
            that this user has invited. Then Promotes his Roles based on invites. */
 });
 client.login('NDA3NjUyNzM0MjYzODg1ODI1.DVEoZQ.UnNKE4_rVLuh6Vqc_utD74V80JQ');
-
-
-//For avoidong Heroku $PORT error
-const express = require('express');
-const app     = express();
-
-app.set('port', (process.env.PORT || 3000));
-
-app.get('/', function(request, response) {
-    const result = 'App is running'
-    response.send(result);
-}).listen(app.get('port'), => () => {
-    console.log('App is running, server is listening on port ', app.get('port'));
-});
