@@ -1,26 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-// ---------------------------
-const http    = require('http');
-const server  = http.createServer();
-const port    = process.env.PORT || 9001;
-
-server.listen(port);
-
-server.on('request', function(req, res){
-  req.write('<h1>Hello World :: </h1>');
-
-  res.end();
-});
-
-server.on('listening', function(){
-  console.log('Listening to ', port);
-});
-
-server.on('error', function(err){
-  console.log(err);
-});
 
 //list of role and current id #'s for use retrieved w/ message.guild
 
@@ -195,4 +175,5 @@ client.on('message', message => {
            all the invite codes created by him using his userID to then determine the amount of invites
            that this user has invited. Then Promotes his Roles based on invites. */
 });
-client.login('NDA3NjUyNzM0MjYzODg1ODI1.DVEoZQ.UnNKE4_rVLuh6Vqc_utD74V80JQ');
+
+client.login(process.env.BOT_TOKEN);
