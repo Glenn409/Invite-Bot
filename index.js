@@ -1,7 +1,27 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const http = require('http');
-http.createServer(onRequest).listen(process.env.PORT || 6000)
+
+// ---------------------------
+const http    = require('http');
+const server  = http.createServer();
+const port    = process.env.PORT || 9001;
+
+server.listen(port);
+
+server.on('request', function(req, res){
+  req.write('<h1>Hello World :: </h1>');
+
+  res.end();
+});
+
+server.on('listening', function(){
+  console.log('Listening to ', port);
+});
+
+server.on('error', function(err){
+  console.log(err);
+});
+
 //list of role and current id #'s for use retrieved w/ message.guild
 
 const private = '409243528108048385';
