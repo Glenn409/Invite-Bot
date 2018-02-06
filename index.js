@@ -167,6 +167,10 @@ client.on('message', message => {
           message.reply(invite_reply + ' Congrats you have been promoted to Brigadier General!');
         }
       }
+      else {
+        console.log('invite command returned nothing')
+        return;
+      }
     })
     console.log('Executed a invites command! Currently ' + executeCount + ' have been excited since turned on!' );
     executeCount += 1;
