@@ -56,8 +56,9 @@ client.on('message', message => {
   if(message.author.equals(client.user)){   //prevents bot talking to itself just incase (even tho we know its not gonna execute !invites)
     return;
   }
+  let invite_command = message.content.toLowerCase();
 
-  if(message.content === '!invites'){             //checks if message is !invites to execute command
+  if(message.content === invite_command){             //checks if message is !invites to execute command
     let invites = message.guild.fetchInvites();  //gets all guild invites
     let userID = message.author.id;             //retrieves user's ID who requested the command
     let inviteAmount = 0;
